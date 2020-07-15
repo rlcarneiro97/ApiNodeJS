@@ -9,8 +9,8 @@ const app = express()
 app.use(express.json())
 //liberando projeto pra dominio publico com o cors
 app.use(cors())
-//conectando ao mongodb e verificando se vem ou nao erro
-mongoose.connect("mongodb://localhost:27017/nodeapi", {useUnifiedTopology:true, useNewUrlParser: true, useCreateIndex: true})
+//conectando ao mongodb e verificando se vem ou nao erro "mongodb://localhost:27017/nodeapi"
+mongoose.connect("mongodb+srv://deploy:uploaddeploy@cluster0.fgmry.mongodb.net/<dbname>?retryWrites=true&w=majority", {useUnifiedTopology:true, useNewUrlParser: true, useCreateIndex: true})
 const db = mongoose.connection
 db.on("Error", console.error.bind(console, "connection error: "))
 db.once("open", function(){})
